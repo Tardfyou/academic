@@ -219,3 +219,12 @@ h1::after, .section-heading h2::after {
   h1:hover, .section-heading:hover h2, .research-item:hover h3 { transform: none; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
 }
+
+.section-title-text { display: inline-block; }
+@media (prefers-reduced-motion: no-preference) {
+  .section-heading h2.is-revealed .section-title-text { animation: section-title-arrive 600ms cubic-bezier(.22,1,.36,1) both; }
+}
+@keyframes section-title-arrive {
+  from { opacity: .45; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}

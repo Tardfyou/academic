@@ -33,6 +33,17 @@
   window.addEventListener('load', scheduleUpdate, { once: true });
   document.fonts.ready.then(scheduleUpdate);
   updateCurrentSection();
+  if ('IntersectionObserver' in window && !reducedMotion.matches) {
+    const titleObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-revealed');
+        titleObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0.65, rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('.section-heading h2').forEach(title => titleObserver.observe(title));
+  }
+
   document.querySelectorAll('details.abstract').forEach(details => {
     const summary = details.querySelector('summary');
     let desiredOpen = details.open;
