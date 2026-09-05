@@ -136,3 +136,8 @@ footer a { color: var(--muted); }
 .abstract summary { min-height: 32px; padding-top: 5px; }
 .abstract p { padding-top: 10px; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }
+
+.profile-links { gap: 20px; }
+.profile-links a { display: inline-flex; align-items: center; gap: 7px; min-height: 36px; color: #043361; }
+.social-icon { display: block; width: 19px; height: 19px; flex: 0 0 19px; }
+.profile-links a:hover { color: #3399cc; }
