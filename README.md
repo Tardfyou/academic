@@ -20,3 +20,7 @@ Original implementation, with layout research informed by:
 - [Jon Barron](https://jonbarron.info/): readable research entries and compact profile.
 - [Pascal Michaillat](https://pascalmichaillat.org/): minimal academic typography.
 - [Lilian Weng](https://lilianweng.github.io/): clear reading hierarchy.
+
+- [Jingyi Zheng](https://jingyi62.github.io/): Crimson Pro typography and academic reading hierarchy.
+
+Crimson Pro is bundled locally under the SIL Open Font License; see `assets/fonts/OFL.txt`.
