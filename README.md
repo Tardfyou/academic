@@ -24,10 +24,12 @@ Original implementation, with layout research informed by:
 
 - [Jingyi Zheng](https://jingyi62.github.io/): profile sidebar and academic reading hierarchy.
 
-Instrument Sans is bundled locally under the SIL Open Font License; see `assets/fonts/instrument-sans-LICENSE.txt`.
+Instrument Sans and the Allura signature font are bundled locally under the SIL Open Font License; see their license files in `assets/fonts/`.
 
 The current design retains a profile sidebar and a unified sans-serif typographic system, with interface details informed by Apple’s [materials](https://developer.apple.com/design/human-interface-guidelines/materials), [typography](https://developer.apple.com/design/human-interface-guidelines/typography), and [layout](https://developer.apple.com/design/human-interface-guidelines/layout) guidance.
 
 Typography references: [Instrument](https://www.instrument.com/) (Instrument Sans) and [Pentagram](https://www.pentagram.com/) (typographic hierarchy and spacing). The translucent materials are a browser approximation of iOS 26 Liquid Glass, with opaque fallbacks for reduced transparency and increased contrast.
 
 The ICSE venue classification is shown separately from manuscript status. Source: [CCF](https://www.ccf.org.cn/Media_list/cncc/2025-09-27/849149.shtml).
+
+Interactions include a sliding navigation indicator, control press and hover feedback, pointer-lit glass surfaces, and animated native details disclosure. Motion follows the system reduced-motion preference. The visual palette is restrained to cool gray and mist blue, with Allura reserved for the English-name signature.

@@ -1,4 +1,11 @@
 @font-face {
+  font-family: "Allura";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/allura-latin.woff2") format("woff2");
+}
+@font-face {
   font-family: "Instrument Sans";
   font-style: normal;
   font-weight: 400 700;
@@ -14,10 +21,10 @@
   --accent: #075fc0;
   --accent-soft: rgba(110, 173, 245, .16);
   --blue: #135faa;
-  --indigo: #59499b;
-  --teal: #086b70;
-  --plum: #795491;
-  --gold: #875b18;
+  --indigo: #3e5c7c;
+  --teal: #486879;
+  --plum: #53667f;
+  --gold: #52677e;
   --line: rgba(53, 75, 105, .13);
   --radius: 26px;
   --shadow: 0 12px 36px rgba(39, 62, 99, .075);
@@ -201,10 +208,9 @@ footer a { display: inline-flex; align-items: center; min-height: 44px; color: v
 body::before {
   content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
   background:
-    radial-gradient(ellipse at 2% 8%, rgba(142, 195, 234, .52), transparent 45%),
-    radial-gradient(ellipse at 95% 34%, rgba(191, 181, 222, .36), transparent 48%),
-    radial-gradient(ellipse at 28% 96%, rgba(146, 208, 194, .34), transparent 43%),
-    linear-gradient(135deg, #edf3f9, #f0eef5 55%, #eaf3f3);
+    radial-gradient(ellipse at 0% 8%, rgba(143, 183, 216, .30), transparent 48%),
+    radial-gradient(ellipse at 100% 86%, rgba(173, 195, 212, .22), transparent 46%),
+    linear-gradient(135deg, #edf2f7, #f3f4f6 55%, #eaf0f4);
 }
 .about, .research-item, .experience-list, #education .section-body, #honors .section-body { position: relative; isolation: isolate; }
 .profile, .about, .research-item, .experience-list, #education .section-body, #honors .section-body {
@@ -225,7 +231,7 @@ body::before {
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor; mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); mask-composite: exclude;
 }
-.profile::after {
+.profile::after, .about::after, .research-item::after, .experience-list::after, #education .section-body::after, #honors .section-body::after {
   content: ""; position: absolute; inset: 1px; z-index: -1; border-radius: inherit; pointer-events: none;
   background: radial-gradient(ellipse 250px 230px at var(--light-x, 20%) var(--light-y, 0%), rgba(255,255,255,.52), transparent 72%);
 }
@@ -290,11 +296,48 @@ body::before {
 @media (prefers-reduced-transparency: reduce) {
   body::before { display: none; }
   .profile, .about, .research-item, .experience-list, #education .section-body, #honors .section-body, .profile-links a, .paper-actions a { background: #f8fbff; -webkit-backdrop-filter: none; backdrop-filter: none; }
-  .profile::after { display: none; }
+  .profile::after, .about::after, .research-item::after, .experience-list::after, #education .section-body::after, #honors .section-body::after { display: none; }
   .paper-actions a:first-child { background: #0868c9; }
 }
 @media (prefers-contrast: more) {
   :root { --muted: #3f4d61; --line: #8493a8; }
   .profile, .about, .research-item, .experience-list, #education .section-body, #honors .section-body { background: #f8fbff; border-color: #8493a8; }
-  .profile::after { display: none; }
+  .profile::after, .about::after, .research-item::after, .experience-list::after, #education .section-body::after, #honors .section-body::after { display: none; }
+}
+
+/* A restrained signature and a consistent tactile response. */
+.english-name { font: 400 38px/.95 "Allura", cursive; letter-spacing: 0; color: #637c92; margin: 8px 0 3px; }
+#research h2, #experience h2, #education h2, #honors h2 { color: #354f6b; }
+#semweaver h3, .research-item:not(#semweaver) h3 { color: #344e6c; }
+.focus-team, .focus-analysis, .research-item .authors strong { color: #45637d; }
+.interests span:last-child { color: #45637d; background: rgba(160,185,209,.13); }
+.badge-rank { color: #4f607c; background: linear-gradient(145deg, rgba(239,244,252,.75), rgba(173,190,218,.14)); }
+.profile nav { position: relative; isolation: isolate; }
+.profile nav a { position: relative; z-index: 1; }
+.nav-indicator { position: absolute; z-index: 0; left: 0; top: 0; pointer-events: none; border-radius: 15px; border: 1px solid rgba(255,255,255,.92); background: linear-gradient(145deg, rgba(255,255,255,.75), rgba(213,229,244,.22)); box-shadow: inset 0 1px 0 white, 0 2px 10px rgba(48,72,109,.10), 0 0 0 1px rgba(44,71,108,.04); -webkit-backdrop-filter: blur(9px); backdrop-filter: blur(9px); transform: translate3d(var(--nav-x,0),var(--nav-y,0),0); width: var(--nav-width,0); height: var(--nav-height,0); }
+.nav-ready .nav-indicator { transition: transform 360ms cubic-bezier(.22,1,.36,1), width 300ms cubic-bezier(.22,1,.36,1), height 300ms cubic-bezier(.22,1,.36,1); }
+.profile nav.nav-ready a[aria-current="location"], .profile nav.nav-ready a[aria-current="location"]:hover { background: transparent; border-color: transparent; box-shadow: none; }
+.profile-links a, .paper-actions a, .portrait, .profile nav a, .abstract summary { transition: transform 260ms cubic-bezier(.2,.8,.2,1), box-shadow 240ms ease, background-color 180ms ease, color 180ms ease; }
+.profile-links a:active, .paper-actions a:active, .portrait:active { transform: scale(.96); box-shadow: inset 0 2px 5px rgba(45,66,90,.12), 0 1px 2px rgba(45,66,90,.04); }
+.profile nav a:active { transform: scale(.97); }
+.abstract summary { margin-top: 7px; padding: 8px 10px; min-height: 44px; border-radius: 10px; }
+.abstract summary:active { background: rgba(156,180,206,.18); }
+.abstract[data-expanded="false"] summary::after { transform: rotate(45deg); }
+.abstract[data-expanded="true"] summary::after { transform: rotate(225deg); }
+.abstract p { padding-top: 8px; }
+@media (hover: hover) and (pointer: fine) {
+  .profile-links a:hover, .paper-actions a:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 white, 0 7px 16px rgba(38,63,97,.13); }
+  .profile-links a:active, .paper-actions a:active { transform: translateY(0) scale(.96); }
+  .portrait:hover { transform: scale(1.025); }
+  .abstract summary:hover { background: rgba(255,255,255,.37); }
+}
+@media (max-width: 740px) { .english-name { font-size: 34px; margin-top: 5px; } }
+@media (max-width: 360px) { .english-name { font-size: 31px; } }
+@media (prefers-reduced-motion: reduce) {
+  .profile-links a:hover, .paper-actions a:hover, .portrait:hover, .profile-links a:active, .paper-actions a:active, .portrait:active, .profile nav a:active { transform: none; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+@media (min-width: 741px) and (max-height: 800px) {
+  .english-name { font-size: 34px; margin-top: 6px; margin-bottom: 1px; }
 }
