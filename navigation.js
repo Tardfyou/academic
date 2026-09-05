@@ -3,11 +3,6 @@
   const links = [...nav.querySelectorAll('a[href^="#"]')];
   const sections = links.map(link => document.querySelector(link.getAttribute('href')));
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
-  const indicator = document.createElement('span');
-  indicator.className = 'nav-indicator';
-  indicator.setAttribute('aria-hidden', 'true');
-  nav.prepend(indicator);
   let scheduled = false;
 
   function setCurrent(index) {
@@ -15,11 +10,7 @@
       if (i === index) link.setAttribute('aria-current', 'location');
       else link.removeAttribute('aria-current');
     });
-    const link = links[index];
-    indicator.style.setProperty('--nav-x', `${link.offsetLeft}px`);
-    indicator.style.setProperty('--nav-y', `${link.offsetTop}px`);
-    indicator.style.setProperty('--nav-width', `${link.offsetWidth}px`);
-    indicator.style.setProperty('--nav-height', `${link.offsetHeight}px`);
+
   }
   function updateCurrentSection() {
     scheduled = false;
@@ -42,27 +33,6 @@
   window.addEventListener('load', scheduleUpdate, { once: true });
   document.fonts.ready.then(scheduleUpdate);
   updateCurrentSection();
-  window.requestAnimationFrame(() => nav.classList.add('nav-ready'));
-
-  const surfaces = document.querySelectorAll('.profile,.about,.research-item,.experience-list,#education .section-body,#honors .section-body');
-  surfaces.forEach(surface => {
-    let frame = 0;
-    surface.addEventListener('pointermove', event => {
-      if (!finePointer.matches || reducedMotion.matches) return;
-      window.cancelAnimationFrame(frame);
-      frame = window.requestAnimationFrame(() => {
-        const bounds = surface.getBoundingClientRect();
-        surface.style.setProperty('--light-x', `${event.clientX - bounds.left}px`);
-        surface.style.setProperty('--light-y', `${event.clientY - bounds.top}px`);
-      });
-    });
-    surface.addEventListener('pointerleave', () => {
-      window.cancelAnimationFrame(frame);
-      surface.style.removeProperty('--light-x');
-      surface.style.removeProperty('--light-y');
-    });
-  });
-
   document.querySelectorAll('details.abstract').forEach(details => {
     const summary = details.querySelector('summary');
     let desiredOpen = details.open;
