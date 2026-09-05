@@ -1,4 +1,4 @@
-# Vincent Yi · 易承志
+# ChengzhiYi · 易承志
 
 Personal academic homepage, hosted on GitHub Pages.
 
