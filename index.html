@@ -3,27 +3,35 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#f5f5f7">
   <meta name="description" content="ChengzhiYi, PhD student at Huazhong University of Science and Technology. Research focused on large language model systems security and static program analysis.">
   <title>ChengzhiYi</title>
   <link rel="canonical" href="https://tardfyou.github.io/academic/">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/crimson-pro-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="style.css?v=sidebar-1">
+  <link rel="stylesheet" href="style.css?v=ios-1">
 </head>
 <body id="top">
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="site-shell">
     <aside class="profile" aria-label="Personal profile">
+      <div class="profile-identity">
       <a class="portrait" href="#main" aria-label="About ChengzhiYi"><img src="assets/portrait.jpg" width="1050" height="1350" alt="Portrait of ChengzhiYi"></a>
+      <div class="profile-name">
       <h1 id="name">ChengzhiYi</h1>
       <p class="english-name">Vincent</p>
       <p class="position">PhD Student</p>
+      </div>
+      </div>
+      <div class="institution">
       <p class="affiliation">School of Cyber Science<br>and Engineering</p>
       <p class="university">Huazhong University of<br>Science and Technology</p>
+      </div>
+      <div class="contact-links">
       <a class="email" href="mailto:yimou@hust.edu.cn">yimou@hust.edu.cn</a>
-      <div class="profile-links"><a href="https://github.com/Tardfyou">GitHub <span aria-hidden="true">↗</span></a><span class="link-divider" aria-hidden="true">/</span><a href="https://tardfyou.github.io/">Blog <span aria-hidden="true">↗</span></a></div>
-      <nav aria-label="Main navigation"><a href="#about">About</a><a href="#research">Research</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#honors">Honors</a></nav>
+      <div class="profile-links"><a href="https://github.com/Tardfyou">GitHub <span aria-hidden="true">↗</span></a><a href="https://tardfyou.github.io/">Blog <span aria-hidden="true">↗</span></a></div>
+      </div>
+      <nav aria-label="Main navigation"><a href="#about"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="3"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/></svg><span>About</span></a><a href="#research"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 4h6a3 3 0 0 1 3 3v14a4 4 0 0 0-4-2H4zM13 7a3 3 0 0 1 3-3h4v15h-3a4 4 0 0 0-4 2"/></svg><span>Research</span></a><a href="#experience"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="7" width="18" height="14" rx="3"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13a24 24 0 0 0 18 0M12 12v3"/></svg><span>Experience</span></a><a href="#education"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m2 9 10-5 10 5-10 5zM6 11v6q6 5 12 0v-6M22 9v8"/></svg><span>Education</span></a><a href="#honors"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9z"/></svg><span>Honors</span></a></nav>
     </aside>
     <main id="main">
       <section class="about content-section" id="about" aria-labelledby="about-title">
@@ -36,7 +44,7 @@
         <div class="section-heading"><h2 id="research-title">Selected Research</h2></div>
         <div class="section-body">
           <article class="research-item" id="semweaver">
-            <div class="item-meta"><span>SUBMITTED TO ICSE 2027 · UNDER REVIEW</span><time datetime="2026-06-30">2026</time></div>
+            <div class="item-meta"><span class="submission-status">Submitted to ICSE 2027 · Under review</span><time datetime="2026-06-30">2026</time></div>
             <h3>SemWeaver: Refining LLM-Generated Static Vulnerability Checkers with Analyzer-Internal Evidence</h3>
             <p class="authors"><strong>Chengzhi Yi</strong>, Shenao Wang, Yanjie Zhao, Xiao Cheng, Haoyu Wang</p>
             <p>A plug-in refinement layer that selects evidence from static-analysis engines to help LLM-generated vulnerability checkers distinguish vulnerable code from fixed code.</p>
@@ -45,7 +53,7 @@
             <details class="abstract"><summary>Read abstract</summary><p>LLM-based patch-driven synthesis can automatically generate static vulnerability checkers from security fixes, but the resulting checkers often capture only the syntactic shape of the patch while missing the semantic conditions (path guards, state invariants, data-flow relations, and API contracts) needed to distinguish vulnerable code from fixed code. Existing refinement loops rely on behavioral feedback alone, which reveals symptoms but not causes, reducing refinement to prompt-level retry. We observe that static-analysis engines already compute the missing predicates as intermediate results during checker execution, yet these results are never exposed to the refinement process. Directly feeding all intermediate results to the LLM is impractical due to their volume and noise. SemWeaver is a plug-in refinement layer that bridges this gap through adaptive evidence selection: a patch-mechanism classifier identifies the bug category and collects only the relevant analyzer-native facts, which are then normalized with patch context and validation feedback into a typed semantic evidence bundle. A target-preserving gate ensures that each refinement preserves the vulnerable-side trigger while eliminating fixed-side warnings. We evaluate SemWeaver on real-world Linux kernel vulnerability patches. On 12 refinable KNighter derived CSA checkers, SemWeaver raises the patch-discriminating success rate from 0% to 91.7%. On 20 cross-backend detectors (CSA and CodeQL) from an independent generator, it achieves a 50% relative improvement. Ablation and model-robustness studies confirm the contribution of analyzer-native evidence beyond validation-only retry.</p></details>
           </article>
           <article class="research-item">
-            <div class="item-meta"><span>RESEARCH PROJECT</span><span>2024 — 2025</span></div>
+            <div class="item-meta"><span>Research project</span><span>2024 — 2025</span></div>
             <h3>Intelligent security operations with large language models</h3>
             <p>Security-focused language models and orchestration for threat investigation, remediation, and coordinated protection across security devices. I contributed to backend development, API testing, dataset construction, and model training.</p>
             <p class="small-note">Advisor: Lansheng Han · National undergraduate innovation project</p>
@@ -71,5 +79,6 @@
     </main>
     <footer><p>© 2026 ChengzhiYi</p><div><a href="https://github.com/Tardfyou/academic">Source <span aria-hidden="true">↗</span></a><a href="#top">Back to top <span aria-hidden="true">↑</span></a></div></footer>
   </div>
+  <script src="navigation.js" defer></script>
 </body>
 </html>
