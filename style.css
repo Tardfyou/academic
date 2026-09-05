@@ -141,3 +141,58 @@ footer a { color: var(--muted); }
 .profile-links a { display: inline-flex; align-items: center; gap: 7px; min-height: 36px; color: #043361; }
 .social-icon { display: block; width: 19px; height: 19px; flex: 0 0 19px; }
 .profile-links a:hover { color: #3399cc; }
+
+/* Hover rhythm adapted from the personal blog, in the academic palette. */
+:root { --hover-ease: cubic-bezier(.22,1,.36,1); }
+.portrait, .portrait img, .social-icon, .profile-links a, .profile nav a,
+.paper-actions a, .email, footer a, .research-item, .research-item h3,
+.paper-badge, .interests span, .abstract summary {
+  transition: color 180ms ease, border-color 220ms ease, background-color 220ms ease,
+    box-shadow 300ms var(--hover-ease), transform 260ms var(--hover-ease), filter 300ms ease;
+}
+.email, .paper-actions a, footer a {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0 1px;
+  transition: color 180ms ease, background-size 240ms var(--hover-ease), transform 220ms var(--hover-ease);
+}
+.profile nav a > span { position: relative; }
+.profile nav a > span::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -3px; height: 1px;
+  background: currentColor; transform: scaleX(0); transform-origin: left;
+  transition: transform 240ms var(--hover-ease); pointer-events: none;
+}
+.research-item { position: relative; overflow: hidden; isolation: isolate; }
+.research-item::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: linear-gradient(115deg, transparent 20%, rgba(4,51,97,.035) 48%, transparent 76%);
+  opacity: 0; transform: translateX(-90%);
+  transition: opacity 260ms ease, transform 650ms var(--hover-ease);
+}
+.research-item:focus-within { border-color: rgba(4,51,97,.26); box-shadow: 0 10px 26px rgba(4,51,97,.075); }
+.email:focus-visible, .paper-actions a:focus-visible, footer a:focus-visible { background-size: 100% 1px; }
+.profile nav a:focus-visible > span::after { transform: scaleX(1); }
+@media (hover: hover) and (pointer: fine) {
+  .portrait:hover { border-color: rgba(4,51,97,.28); box-shadow: 0 6px 18px rgba(4,51,97,.09); }
+  .portrait:hover img { transform: scale(1.045); filter: saturate(1.04); }
+  .profile-links a:hover { transform: translateY(-2px); text-decoration: none; }
+  .profile-links a:hover .social-icon { transform: scale(1.12); }
+  .profile nav a:hover { transform: translateX(2px); text-decoration: none; }
+  .profile nav a:hover > span::after { transform: scaleX(1); }
+  .email:hover, .paper-actions a:hover, footer a:hover { background-size: 100% 1px; text-decoration: none; }
+  .paper-actions a:hover, footer a:hover { transform: translateY(-1px); }
+  .research-item:hover { transform: translateY(-1px); border-color: rgba(4,51,97,.25); box-shadow: 0 10px 26px rgba(4,51,97,.075); }
+  .research-item:hover::before { opacity: 1; transform: translateX(90%); }
+  .research-item:hover h3 { color: #17658b; }
+  .paper-badge:hover, .interests span:hover { transform: translateY(-1px); background-color: rgba(4,51,97,.07); border-color: rgba(4,51,97,.24); box-shadow: 0 3px 9px rgba(4,51,97,.05); }
+  .abstract summary:hover { color: #17658b; transform: translateX(2px); }
+  .profile-links a:active, .paper-actions a:active { transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .portrait:hover img, .profile-links a:hover, .profile-links a:hover .social-icon,
+  .profile nav a:hover, .paper-actions a:hover, footer a:hover,
+  .research-item:hover, .paper-badge:hover, .interests span:hover, .abstract summary:hover { transform: none; }
+  .research-item::before { display: none; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
