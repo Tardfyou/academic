@@ -196,3 +196,26 @@ footer a { color: var(--muted); }
   .research-item::before { display: none; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
 }
+
+/* Quiet title motion, using the same academic typography. */
+h1, .section-heading h2 { position: relative; width: fit-content; }
+h1 { margin-inline: auto; transition: color 200ms ease, transform 260ms var(--hover-ease), text-shadow 300ms ease; }
+.title-text { display: inline-block; animation: title-arrive 650ms cubic-bezier(.22,1,.36,1) both; }
+h1::after, .section-heading h2::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -5px; height: 1px;
+  background: currentColor; opacity: .38; transform: scaleX(0); transform-origin: left;
+  transition: transform 320ms var(--hover-ease); pointer-events: none;
+}
+.section-heading h2 { transition: color 220ms ease, transform 280ms var(--hover-ease); }
+@keyframes title-arrive { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+@media (hover: hover) and (pointer: fine) {
+  h1:hover { transform: translateY(-1px); color: #17658b; text-shadow: 0 5px 15px rgba(4,51,97,.10); }
+  h1:hover::after, .section-heading:hover h2::after { transform: scaleX(1); }
+  .section-heading:hover h2 { color: #17658b; transform: translateX(1px); }
+  .research-item:hover h3 { transform: translateX(1px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .title-text { animation: none; }
+  h1:hover, .section-heading:hover h2, .research-item:hover h3 { transform: none; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
