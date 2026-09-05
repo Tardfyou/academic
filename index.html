@@ -25,7 +25,7 @@
           <p class="affiliation">PhD Student · School of Cyber Science and Engineering<br>Huazhong University of Science and Technology</p>
           <p class="bio">I study the intersection of <strong>AI and security</strong>: understanding the risks of intelligent agents, and using them to improve how we find and analyze software vulnerabilities.</p>
           <p class="bio secondary">My interests span AI security, agent security, and AI for static program analysis. I am part of <span class="text-emphasis">Security Pride</span> at HUST.</p>
-          <div class="profile-links"><a href="mailto:yimou@hust.edu.cn">Email <span aria-hidden="true">↗</span></a><a href="https://github.com/Tardfyou">GitHub <span aria-hidden="true">↗</span></a><a href="https://tardfyou.github.io/">Blog <span aria-hidden="true">↗</span></a><a href="#research">Explore my research <span aria-hidden="true">↓</span></a></div>
+          <div class="profile-links"><a href="mailto:yimou@hust.edu.cn">yimou@hust.edu.cn <span aria-hidden="true">↗</span></a><a href="https://github.com/Tardfyou">GitHub <span aria-hidden="true">↗</span></a><a href="https://tardfyou.github.io/">Blog <span aria-hidden="true">↗</span></a><a href="#research">Explore my research <span aria-hidden="true">↓</span></a></div>
         </div>
         <figure class="portrait"><img src="assets/portrait.jpg" width="1050" height="1350" alt="Portrait of Vincent Yi"><figcaption><span class="portrait-line"></span>Vincent Yi · HUST</figcaption></figure>
       </section>
@@ -35,11 +35,14 @@
         <div class="section-body">
           <p class="section-lead">I am interested in making AI systems more secure, and security analysis more effective.</p>
           <div class="interests" aria-label="Research interests"><span>AI security</span><span>Agent security</span><span>Static analysis</span></div>
-          <article class="research-item">
-            <div class="item-meta"><span>UNDERGRADUATE THESIS</span><time>2026</time></div>
-            <h3>LLM-assisted synthesis of static vulnerability detectors</h3>
-            <p>Combining differential, heterogeneous evidence collection with agent orchestration to refine static vulnerability detectors. My undergraduate thesis explored a framework for improving detector synthesis with large language models.</p>
-            <p class="small-note">Undergraduate thesis · Excellent overall assessment</p>
+          <article class="research-item" id="semweaver">
+            <div class="item-meta"><span>SUBMITTED TO ICSE 2027 · UNDER REVIEW</span><time datetime="2026-06-30">2026</time></div>
+            <h3>SemWeaver: Refining LLM-Generated Static Vulnerability Checkers with Analyzer-Internal Evidence</h3>
+            <p class="authors"><strong>Chengzhi Yi</strong>, Shenao Wang, Yanjie Zhao, Xiao Cheng, Haoyu Wang</p>
+            <p>A plug-in refinement layer that selects evidence from static-analysis engines to help LLM-generated vulnerability checkers distinguish vulnerable code from fixed code.</p>
+            <p class="small-note">Huazhong University of Science and Technology · Macquarie University</p>
+            <div class="paper-actions"><a href="https://anonymous.4open.science/r/SemWeaver-FD1E">Artifact <span aria-hidden="true">↗</span></a><a href="mailto:yimou@hust.edu.cn?subject=SemWeaver%20paper%20inquiry">Contact author <span aria-hidden="true">↗</span></a></div>
+            <details class="abstract"><summary>Read abstract</summary><p>LLM-based patch-driven synthesis can automatically generate static vulnerability checkers from security fixes, but the resulting checkers often capture only the syntactic shape of the patch while missing the semantic conditions (path guards, state invariants, data-flow relations, and API contracts) needed to distinguish vulnerable code from fixed code. Existing refinement loops rely on behavioral feedback alone, which reveals symptoms but not causes, reducing refinement to prompt-level retry. We observe that static-analysis engines already compute the missing predicates as intermediate results during checker execution, yet these results are never exposed to the refinement process. Directly feeding all intermediate results to the LLM is impractical due to their volume and noise. SemWeaver is a plug-in refinement layer that bridges this gap through adaptive evidence selection: a patch-mechanism classifier identifies the bug category and collects only the relevant analyzer-native facts, which are then normalized with patch context and validation feedback into a typed semantic evidence bundle. A target-preserving gate ensures that each refinement preserves the vulnerable-side trigger while eliminating fixed-side warnings. We evaluate SemWeaver on real-world Linux kernel vulnerability patches. On 12 refinable KNighter derived CSA checkers, SemWeaver raises the patch-discriminating success rate from 0% to 91.7%. On 20 cross-backend detectors (CSA and CodeQL) from an independent generator, it achieves a 50% relative improvement. Ablation and model-robustness studies confirm the contribution of analyzer-native evidence beyond validation-only retry.</p></details>
           </article>
           <article class="research-item">
             <div class="item-meta"><span>RESEARCH PROJECT</span><span>2024 — 2025</span></div>

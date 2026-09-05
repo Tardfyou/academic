@@ -6,3 +6,5 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
 .education+.education{margin-top:27px;padding-top:27px;border-top:1px solid var(--line)}
+
+.research-item .authors{font-size:12px;line-height:1.8;margin:0 0 13px;color:var(--muted)}.authors strong{color:var(--ink);font-weight:600}.paper-actions{display:flex;gap:23px;font-size:12px;margin-top:17px}.abstract{margin-top:16px;font-size:12px}.abstract summary{color:var(--green);cursor:pointer;width:fit-content;text-underline-offset:4px}.abstract summary:hover{text-decoration:underline}.abstract summary:focus-visible{outline:2px solid var(--green);outline-offset:4px}.abstract[open]{padding:15px 18px;background:var(--soft);border-left:2px solid #a3b5a2}.abstract p{margin-top:12px;font-size:13px;color:var(--muted);line-height:1.9}
