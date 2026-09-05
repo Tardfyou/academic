@@ -28,4 +28,25 @@
   window.addEventListener('resize', scheduleUpdate);
   window.addEventListener('load', scheduleUpdate, { once: true });
   updateCurrentSection();
+
+  const profile = document.querySelector('.profile');
+  const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let lightFrame = 0;
+  if (profile && finePointer.matches) {
+    profile.addEventListener('pointermove', event => {
+      if (reducedMotion.matches) return;
+      window.cancelAnimationFrame(lightFrame);
+      lightFrame = window.requestAnimationFrame(() => {
+        const bounds = profile.getBoundingClientRect();
+        profile.style.setProperty('--light-x', `${event.clientX - bounds.left}px`);
+        profile.style.setProperty('--light-y', `${event.clientY - bounds.top}px`);
+      });
+    });
+    profile.addEventListener('pointerleave', () => {
+      window.cancelAnimationFrame(lightFrame);
+      profile.style.removeProperty('--light-x');
+      profile.style.removeProperty('--light-y');
+    });
+  }
 })();

@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f5f5f7">
+  <meta name="theme-color" content="#eaf0f6">
   <meta name="description" content="ChengzhiYi, PhD student at Huazhong University of Science and Technology. Research focused on large language model systems security and static program analysis.">
   <title>ChengzhiYi</title>
   <link rel="canonical" href="https://tardfyou.github.io/academic/">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="assets/fonts/crimson-pro-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="style.css?v=ios-1">
+  <link rel="preload" href="assets/fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=glass-2">
 </head>
 <body id="top">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -36,15 +36,22 @@
     <main id="main">
       <section class="about content-section" id="about" aria-labelledby="about-title">
         <div class="section-heading"><h2 id="about-title">About Me</h2></div>
-        <p>I am a PhD student in the School of Cyber Science and Engineering at <strong>Huazhong University of Science and Technology</strong>, where I am part of <strong>Security Pride</strong>.</p>
-        <p>My research focuses on <strong>large language model systems security</strong> and <strong>static program analysis</strong>. My projects also explore AI-assisted vulnerability analysis.</p>
+        <p>I am a PhD student in the School of Cyber Science and Engineering at <strong>Huazhong University of Science and Technology</strong>, where I am part of <strong class="focus-team">Security Pride</strong>.</p>
+        <p>My research focuses on <strong class="focus-llm">large language model systems security</strong> and <strong class="focus-analysis">static program analysis</strong>. My projects also explore AI-assisted vulnerability analysis.</p>
         <div class="interests" aria-label="Research interests"><span>LLM Systems Security</span><span>Static Program Analysis</span></div>
       </section>
       <section class="content-section" id="research" aria-labelledby="research-title">
         <div class="section-heading"><h2 id="research-title">Selected Research</h2></div>
         <div class="section-body">
           <article class="research-item" id="semweaver">
-            <div class="item-meta"><span class="submission-status">Submitted to ICSE 2027 · Under review</span><time datetime="2026-06-30">2026</time></div>
+            <div class="item-meta paper-meta">
+              <div class="paper-badges" role="group" aria-label="Venue ranking and submission status">
+                <span class="paper-badge badge-venue">ICSE 2027</span>
+                <span class="paper-badge badge-rank" title="ICSE is a CCF A conference. This manuscript is under review.">CCF-A</span>
+                <span class="paper-badge badge-status"><span class="status-dot" aria-hidden="true"></span>Submitted · Under review</span>
+              </div>
+              <time datetime="2026-06-30">2026</time>
+            </div>
             <h3>SemWeaver: Refining LLM-Generated Static Vulnerability Checkers with Analyzer-Internal Evidence</h3>
             <p class="authors"><strong>Chengzhi Yi</strong>, Shenao Wang, Yanjie Zhao, Xiao Cheng, Haoyu Wang</p>
             <p>A plug-in refinement layer that selects evidence from static-analysis engines to help LLM-generated vulnerability checkers distinguish vulnerable code from fixed code.</p>

@@ -22,8 +22,12 @@ Original implementation, with layout research informed by:
 - [Pascal Michaillat](https://pascalmichaillat.org/): minimal academic typography.
 - [Lilian Weng](https://lilianweng.github.io/): clear reading hierarchy.
 
-- [Jingyi Zheng](https://jingyi62.github.io/): Crimson Pro typography and academic reading hierarchy.
+- [Jingyi Zheng](https://jingyi62.github.io/): profile sidebar and academic reading hierarchy.
 
-Crimson Pro is bundled locally under the SIL Open Font License; see `assets/fonts/OFL.txt`.
+Instrument Sans is bundled locally under the SIL Open Font License; see `assets/fonts/instrument-sans-LICENSE.txt`.
 
-The current design retains a profile sidebar and academic serif text, with interface details informed by Apple’s [materials](https://developer.apple.com/design/human-interface-guidelines/materials), [typography](https://developer.apple.com/design/human-interface-guidelines/typography), and [layout](https://developer.apple.com/design/human-interface-guidelines/layout) guidance.
+The current design retains a profile sidebar and a unified sans-serif typographic system, with interface details informed by Apple’s [materials](https://developer.apple.com/design/human-interface-guidelines/materials), [typography](https://developer.apple.com/design/human-interface-guidelines/typography), and [layout](https://developer.apple.com/design/human-interface-guidelines/layout) guidance.
+
+Typography references: [Instrument](https://www.instrument.com/) (Instrument Sans) and [Pentagram](https://www.pentagram.com/) (typographic hierarchy and spacing). The translucent materials are a browser approximation of iOS 26 Liquid Glass, with opaque fallbacks for reduced transparency and increased contrast.
+
+The ICSE venue classification is shown separately from manuscript status. Source: [CCF](https://www.ccf.org.cn/Media_list/cncc/2025-09-27/849149.shtml).
