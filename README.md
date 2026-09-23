@@ -6,4 +6,4 @@ The profile and shared design are generated from the [blog source](https://githu
 
 Serve this directory with any static HTTP server. Asset paths in `index.html` are relative, and `.nojekyll` preserves the exported structure. Existing legacy files remain in the repository for compatibility and history.
 
-The design uses a pure-white reading canvas, local fonts, clear glass, and bounded liquid interaction. Reduced-motion and reduced-transparency preferences are respected; full optical refraction is progressively enhanced in Chromium. Font licenses are included next to their files.
+The design uses a pure-white reading canvas, local fonts, clear glass, and bounded liquid interaction. Reduced-motion and reduced-transparency preferences are respected. Liquid rims also work with the CSS glass fallback, verified in Chromium and WebKit desktop and touch emulation; full optical refraction remains progressively enhanced in Chromium. Font licenses are included next to their files.
